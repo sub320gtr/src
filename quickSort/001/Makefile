@@ -6,7 +6,7 @@
 #/
 
 default: clear 001
-		gcc -o 001.exe ./main.c ./001.o
+		gcc -o 001.exe ./main.c ./quickSort.c ./001.o
 
 clear:
 		rm -rf ./*.exe ./*.o

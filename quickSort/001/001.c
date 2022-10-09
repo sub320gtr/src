@@ -13,20 +13,23 @@
 #include <time.h>
 #include "001.h"
 
-void quickSort();
+
 void start (void) {
-    int i; // индекс
+    int i; // индексы
     int n; // размер массива
-    int p; // индекс опопрного элемента
     printf("Введите размер массива: ");
     scanf("%d", &n);
-    int mas[n];
-    srand(time(NULL));
+    int m[n];
+    int *mas = m;
+    srand(time(NULL)); // функция для "случайного" массива
     printf("Сгенерированный массив:\n");
-    for (i = 0; i < n; i++) {
-        mas[i] = rand() % 100; // диапазон случайных чисед от 0 до 100
-        printf("%d ", mas[i]);
+    for (i = 0; i < n; i++) {  // формирование случайного вектора
+        *(mas+i) = rand() % 100; // диапазон случайных чисед от 0 до 100
+        printf("%d ", *(mas+i));
     }
-    p = (int) n/2;
-    printf("\n%d ", p);
+    quickSort(m,n);
+    printf("\n Отсортированный массив \n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", *(mas+i));
+    }
 }

@@ -6,3 +6,4 @@
 */
 
 void start(void);
+void quickSort(int *mas, int size);
