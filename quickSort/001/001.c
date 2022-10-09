@@ -20,16 +20,16 @@ void start (void) {
     printf("Введите размер массива: ");
     scanf("%d", &n);
     int m[n];
-    int *mas = m;
     srand(time(NULL)); // функция для "случайного" массива
     printf("Сгенерированный массив:\n");
     for (i = 0; i < n; i++) {  // формирование случайного вектора
-        *(mas+i) = rand() % 100; // диапазон случайных чисед от 0 до 100
-        printf("%d ", *(mas+i));
+        m[i] = rand() % 100; // диапазон случайных чисед от 0 до 100
+        printf("%d ", m[i]);
     }
     quickSort(m,n);
     printf("\n Отсортированный массив \n");
     for (i = 0; i < n; i++) {
-        printf("%d ", *(mas+i));
+        printf("%d ", m[i]);
+        printf("%p ", *(m));
     }
 }
